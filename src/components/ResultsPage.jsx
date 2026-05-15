@@ -19,7 +19,13 @@ export default function ResultsPage({ results, onRestart }) {
       <div className="results-card">
         <p className="results-label">Bästa matchning</p>
 
-        <div className="top-match" style={{ borderColor: top.party.color + '60', background: top.party.color + '12' }}>
+        <div
+          className="top-match"
+          style={{
+            background: top.party.color + '12',
+            borderColor: top.party.color + '45',
+          }}
+        >
           <span className="top-party-name" style={{ color: top.party.color }}>
             {top.party.name}
           </span>
@@ -38,10 +44,7 @@ export default function ResultsPage({ results, onRestart }) {
                 <div className="bar-track">
                   <div
                     className={`bar-fill${visible ? ' visible' : ''}`}
-                    style={{
-                      width: `${match}%`,
-                      backgroundColor: party.color,
-                    }}
+                    style={{ width: `${match}%`, backgroundColor: party.color }}
                   />
                 </div>
               </div>
@@ -54,9 +57,13 @@ export default function ResultsPage({ results, onRestart }) {
           Gör om valkompass
         </button>
 
-        <p className="disclaimer">
-          Partipositionerna är placeholders och uppdateras inför valet 2026.
-        </p>
+        <div className="results-attribution">
+          <div className="m-badge small">M</div>
+          <div className="org-name">
+            <span className="org-main">Moderaterna</span>
+            <span className="org-sub">Stenungsunds kommun</span>
+          </div>
+        </div>
       </div>
     </div>
   )

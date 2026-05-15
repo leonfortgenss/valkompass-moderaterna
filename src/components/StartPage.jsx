@@ -2,18 +2,12 @@ export default function StartPage({ onStart }) {
   return (
     <div className="start-page">
       <div className="start-card">
-        <div className="logo-row">
-          <div className="m-badge">M</div>
-          <div className="org-name">
-            <span className="org-main">Moderaterna</span>
-            <span className="org-sub">Stenungsunds kommun</span>
-          </div>
-        </div>
+        <h1 className="start-title">Valkompass 2026</h1>
+        <p className="start-municipality">Stenungsunds kommunfullmäktige</p>
 
-        <h1>Valkompass 2026</h1>
         <p className="intro-text">
           Svara på 15 frågor om lokal politik och se hur väl dina åsikter
-          stämmer med partierna i Stenungsunds kommunfullmäktige.
+          stämmer med partierna i kommunen.
         </p>
 
         <ul className="how-it-works" aria-label="Så fungerar det">

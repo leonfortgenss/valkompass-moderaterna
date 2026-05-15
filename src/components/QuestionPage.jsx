@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+
 const AgreeStrongIcon = () => (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <circle cx="12" cy="12" r="9.5" fill="currentColor" opacity="0.15"/>
@@ -34,6 +36,19 @@ const OPTIONS = [
 ]
 
 export default function QuestionPage({ question, total, current, answer, onAnswer, onBack }) {
+  const [pending, setPending] = useState(null)
+
+  // Clear pending state when the question changes
+  useEffect(() => {
+    setPending(null)
+  }, [question.id])
+
+  function handleSelect(value) {
+    if (pending !== null) return
+    setPending(value)
+    setTimeout(() => onAnswer(value), 220)
+  }
+
   return (
     <div className="question-page">
       <header className="q-header">
@@ -42,7 +57,7 @@ export default function QuestionPage({ question, total, current, answer, onAnswe
       </header>
 
       <div className="progress-wrap">
-        <div className="progress-bar">
+        <div className="progress-bar" role="progressbar" aria-valuenow={current} aria-valuemin={1} aria-valuemax={total}>
           <div className="progress-fill" style={{ width: `${(current / total) * 100}%` }} />
         </div>
       </div>
@@ -52,31 +67,35 @@ export default function QuestionPage({ question, total, current, answer, onAnswe
         <h2 className="question-text">{question.text}</h2>
 
         <div className="answer-grid" role="radiogroup" aria-label="Ditt svar">
-          {OPTIONS.map((opt) => (
-            <button
-              key={opt.value}
-              role="radio"
-              aria-checked={answer === opt.value}
-              className={`answer-btn${answer === opt.value ? ' selected' : ''}`}
-              onClick={() => onAnswer(opt.value)}
-            >
-              <span className="answer-icon"><opt.Icon /></span>
-              <span className="answer-label">{opt.top}<br />{opt.bot}</span>
-            </button>
-          ))}
+          {OPTIONS.map((opt) => {
+            const isSelected = pending === opt.value || (pending === null && answer === opt.value)
+            return (
+              <button
+                key={opt.value}
+                role="radio"
+                aria-checked={isSelected}
+                className={`answer-btn${isSelected ? ' selected' : ''}`}
+                onClick={() => handleSelect(opt.value)}
+                disabled={pending !== null}
+              >
+                <span className="answer-icon"><opt.Icon /></span>
+                <span className="answer-label">{opt.top}<br />{opt.bot}</span>
+              </button>
+            )
+          })}
         </div>
 
         {(question.proArg || question.conArg) && (
           <div className="arguments">
             {question.proArg && (
               <div className="arg arg-pro">
-                <span className="arg-marker">+</span>
+                <span className="arg-marker" aria-hidden="true">+</span>
                 <span>{question.proArg}</span>
               </div>
             )}
             {question.conArg && (
               <div className="arg arg-con">
-                <span className="arg-marker">−</span>
+                <span className="arg-marker" aria-hidden="true">−</span>
                 <span>{question.conArg}</span>
               </div>
             )}
