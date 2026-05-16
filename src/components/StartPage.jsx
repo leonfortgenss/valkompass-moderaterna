@@ -3,7 +3,7 @@ export default function StartPage({ onStart }) {
     <div className="start-page">
       <div className="start-card">
         <h1 className="start-title">Valkompass 2026</h1>
-        <p className="start-municipality">Stenungsunds kommunfullmäktige</p>
+        <p className="start-municipality">Stenugsunds kommun</p>
 
         <p className="intro-text">
           Svara på 15 frågor om lokal politik och se hur väl dina åsikter
