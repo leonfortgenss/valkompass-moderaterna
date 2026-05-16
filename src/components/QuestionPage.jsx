@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import komunLogo from '../assets/steungundsundskommun.png'
 
 const AgreeStrongIcon = () => (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -52,7 +53,7 @@ export default function QuestionPage({ question, total, current, answer, onAnswe
   return (
     <div className="question-page">
       <header className="q-header">
-        <div className="m-badge small">M</div>
+        <img src={komunLogo} className="q-logo" alt="Stenungsunds kommun" />
         <span className="q-counter">Fråga {current} av {total}</span>
       </header>
 

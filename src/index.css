@@ -50,6 +50,15 @@ body {
   border-radius: 8px;
 }
 
+/* ---- Kommun logo in header ---- */
+.q-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
 /* ---- Shared header ---- */
 .q-header {
   display: flex; align-items: center; gap: 12px;
@@ -505,6 +514,8 @@ body {
 
 /* ===== MOBILE ===== */
 @media (max-width: 480px) {
+  .q-logo { width: 28px; height: 28px; }
+
   .start-card { padding: 28px 24px 28px; }
 
   .question-card { padding: 20px 20px 24px; }

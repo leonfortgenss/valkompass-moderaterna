@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import komunLogo from '../assets/steungundsundskommun.png'
 
 export default function ResultsPage({ results, onRestart }) {
   const [visible, setVisible] = useState(false)
@@ -12,7 +13,7 @@ export default function ResultsPage({ results, onRestart }) {
   return (
     <div className="results-page">
       <header className="q-header">
-        <div className="m-badge small">M</div>
+        <img src={komunLogo} className="q-logo" alt="Stenungsunds kommun" />
         <span className="q-counter">Ditt resultat</span>
       </header>
 
