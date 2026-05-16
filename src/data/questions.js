@@ -10,6 +10,7 @@ export const parties = [
   { id: 'L',  name: 'Liberalerna',         color: '#006AB3' },
   { id: 'KD', name: 'Kristdemokraterna',   color: '#004B9C' },
   { id: 'MP', name: 'Miljöpartiet',        color: '#53a32e' },
+  { id: 'SP', name: 'Stenungsundspartiet', color: '#F0C000' },
 ]
 
 export const questions = [
@@ -19,7 +20,7 @@ export const questions = [
     category: 'Samhällsplanering',
     proArg: 'Fler bostäder möter efterfrågan och håller hyrorna nere.',
     conArg: 'Tät utbyggnad kan påverka grönområden och kommunens karaktär.',
-    positions: { M: 1, S: 1, SD: 0, C: 1, V: 1, L: 1, KD: 0, MP: -1 },
+    positions: { M: 1, S: 1, SD: 0, C: 1, V: 1, L: 1, KD: 0, MP: -1, SP: 0 },
   },
   {
     id: 2,
@@ -27,7 +28,7 @@ export const questions = [
     category: 'Utbildning',
     proArg: 'Valfrihet och konkurrens driver upp kvaliteten i alla skolor.',
     conArg: 'Offentliga resurser bör inte gå till privata vinster.',
-    positions: { M: 1, S: -1, SD: 0, C: 1, V: -1, L: 1, KD: 1, MP: -1 },
+    positions: { M: 1, S: -1, SD: 0, C: 1, V: -1, L: 1, KD: 1, MP: -1, SP: 0 },
   },
   {
     id: 3,
@@ -35,7 +36,7 @@ export const questions = [
     category: 'Ekonomi',
     proArg: 'Lägre skatt ger mer pengar i plånboken och lockar nya invånare.',
     conArg: 'Skattesänkningar riskerar att urholka välfärden och servicen.',
-    positions: { M: 1, S: -1, SD: 0, C: 1, V: -1, L: 0, KD: 0, MP: -1 },
+    positions: { M: 1, S: -1, SD: 0, C: 1, V: -1, L: 0, KD: 0, MP: -1, SP: 0 },
   },
   {
     id: 4,
@@ -43,7 +44,7 @@ export const questions = [
     category: 'Infrastruktur',
     proArg: 'Bättre cykelinfrastruktur minskar utsläpp och förbättrar folkhälsan.',
     conArg: 'Investeringen är kostsam och gynnar en liten del av invånarna.',
-    positions: { M: 0, S: 1, SD: -1, C: 1, V: 1, L: 1, KD: 0, MP: 1 },
+    positions: { M: 0, S: 1, SD: -1, C: 1, V: 1, L: 1, KD: 0, MP: 1, SP: 0 },
   },
   {
     id: 5,
@@ -51,7 +52,7 @@ export const questions = [
     category: 'Näringsliv',
     proArg: 'Fler företag skapar jobb och skatteintäkter som stärker kommunen.',
     conArg: 'Riktade stöd till företag riskerar att snedvrida konkurrensen.',
-    positions: { M: 1, S: 1, SD: 1, C: 1, V: 0, L: 1, KD: 1, MP: 0 },
+    positions: { M: 1, S: 1, SD: 1, C: 1, V: 0, L: 1, KD: 1, MP: 0, SP: 0 },
   },
   {
     id: 6,
@@ -59,7 +60,7 @@ export const questions = [
     category: 'Äldreomsorg',
     proArg: 'Valfrihet och konkurrens bidrar till bättre omsorg och nöjdare brukare.',
     conArg: 'Äldreomsorg är ett grundläggande ansvar som bör hållas i offentlig regi.',
-    positions: { M: 1, S: -1, SD: 0, C: 1, V: -1, L: 1, KD: 1, MP: -1 },
+    positions: { M: 1, S: -1, SD: 0, C: 1, V: -1, L: 1, KD: 1, MP: -1, SP: 0 },
   },
   {
     id: 7,
@@ -67,7 +68,7 @@ export const questions = [
     category: 'Social omsorg',
     proArg: 'Tidiga insatser är mer humana och billigare än att åtgärda problem i efterhand.',
     conArg: 'Kommunen bör prioritera kärnuppdraget snarare än breda sociala program.',
-    positions: { M: 1, S: 1, SD: 1, C: 1, V: 1, L: 1, KD: 1, MP: 1 },
+    positions: { M: 1, S: 1, SD: 1, C: 1, V: 1, L: 1, KD: 1, MP: 1, SP: 0 },
   },
   {
     id: 8,
@@ -75,7 +76,7 @@ export const questions = [
     category: 'Miljö',
     proArg: 'Hårdare krav skyddar Stenungsunds natur och invånares hälsa.',
     conArg: 'Alltför strikta krav riskerar att driva bort företag och jobb från kommunen.',
-    positions: { M: 0, S: 1, SD: -1, C: 1, V: 1, L: 1, KD: 0, MP: 1 },
+    positions: { M: 0, S: 1, SD: -1, C: 1, V: 1, L: 1, KD: 0, MP: 1, SP: 0 },
   },
   {
     id: 9,
@@ -83,7 +84,7 @@ export const questions = [
     category: 'Trygghet',
     proArg: 'Ökad synlig närvaro gör Stenungsund tryggare för alla invånare.',
     conArg: 'Resurser bör i stället läggas på förebyggande sociala insatser.',
-    positions: { M: 1, S: 1, SD: 1, C: 0, V: 0, L: 1, KD: 1, MP: 0 },
+    positions: { M: 1, S: 1, SD: 1, C: 0, V: 0, L: 1, KD: 1, MP: 0, SP: 0 },
   },
   {
     id: 10,
@@ -91,7 +92,7 @@ export const questions = [
     category: 'Samhällsplanering',
     proArg: 'Ökar tillgängligheten och ger ökade skatteintäkter för kommunen.',
     conArg: 'Riskerar att skada skärgårdens unika natur- och kulturmiljö.',
-    positions: { M: 1, S: 0, SD: 1, C: 1, V: -1, L: 1, KD: 0, MP: -1 },
+    positions: { M: 1, S: 0, SD: 1, C: 1, V: -1, L: 1, KD: 0, MP: -1, SP: 0 },
   },
   {
     id: 11,
@@ -99,7 +100,7 @@ export const questions = [
     category: 'Infrastruktur',
     proArg: 'Stärker äldres rörlighet och minskar deras bilberoende.',
     conArg: 'Subventioner bör riktas mot låginkomsttagare oavsett ålder.',
-    positions: { M: -1, S: 1, SD: 1, C: 0, V: 1, L: 0, KD: 1, MP: 1 },
+    positions: { M: -1, S: 1, SD: 1, C: 0, V: 1, L: 0, KD: 1, MP: 1, SP: 0 },
   },
   {
     id: 12,
@@ -107,7 +108,7 @@ export const questions = [
     category: 'Integration',
     proArg: 'Humanitärt ansvar och demografisk förnyelse stärker kommunen på sikt.',
     conArg: 'Stenungsund måste klara integrationen av dem som redan bor här.',
-    positions: { M: -1, S: 1, SD: -1, C: 0, V: 1, L: 1, KD: 0, MP: 1 },
+    positions: { M: -1, S: 1, SD: -1, C: 0, V: 1, L: 1, KD: 0, MP: 1, SP: 0 },
   },
   {
     id: 13,
@@ -115,7 +116,7 @@ export const questions = [
     category: 'Fritid',
     proArg: 'Satsningar på fritid förebygger ohälsa och stärker gemenskapen.',
     conArg: 'Befintliga anläggningar bör underhållas bättre innan nya byggs.',
-    positions: { M: 1, S: 1, SD: 1, C: 1, V: 1, L: 1, KD: 1, MP: 1 },
+    positions: { M: 1, S: 1, SD: 1, C: 1, V: 1, L: 1, KD: 1, MP: 1, SP: 0 },
   },
   {
     id: 14,
@@ -123,7 +124,7 @@ export const questions = [
     category: 'Miljö',
     proArg: 'Ambitiösa klimatmål skapar bättre förutsättningar för framtida generationer.',
     conArg: 'Målet är orealistiskt och kan leda till kostsamma, ineffektiva åtgärder.',
-    positions: { M: 0, S: 1, SD: -1, C: 1, V: 1, L: 1, KD: 0, MP: 1 },
+    positions: { M: 0, S: 1, SD: -1, C: 1, V: 1, L: 1, KD: 0, MP: 1, SP: 0 },
   },
   {
     id: 15,
@@ -131,6 +132,6 @@ export const questions = [
     category: 'Ekonomi',
     proArg: 'Effektivare organisation frigör resurser till verksamhet nära medborgarna.',
     conArg: 'Minskad administration kan försämra uppföljning och kvalitet.',
-    positions: { M: 1, S: -1, SD: 1, C: 1, V: 0, L: 0, KD: 0, MP: -1 },
+    positions: { M: 1, S: -1, SD: 1, C: 1, V: 0, L: 0, KD: 0, MP: -1, SP: 0 },
   },
 ]
