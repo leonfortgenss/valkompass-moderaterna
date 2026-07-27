@@ -2,36 +2,25 @@ export default function StartPage({ onStart }) {
   return (
     <div className="start-page">
       <div className="start-card">
-        <h1 className="start-title">Valkompass 2026</h1>
-        <p className="start-municipality">Stenugsunds kommun</p>
+        <h1 className="start-title">Vilket Stenungsund vill du ha?</h1>
 
         <p className="intro-text">
-          Svara på 15 frågor om lokal politik och se hur väl dina åsikter
-          stämmer med partierna i kommunen.
+          Gör 25 lokala vägval om skola, ekonomi, trygghet, omsorg och framtid.
+          Välj det alternativ som ligger närmast hur du själv tänker.
         </p>
 
-        <ul className="how-it-works" aria-label="Så fungerar det">
-          <li>
-            <span className="step-num">1</span>
-            Läs varje påstående och välj din ståndpunkt
-          </li>
-          <li>
-            <span className="step-num">2</span>
-            Ta del av argument för och emot varje fråga
-          </li>
-          <li>
-            <span className="step-num">3</span>
-            Se din matchning med alla partier i kommunen
-          </li>
-        </ul>
-
         <button className="btn-primary" onClick={onStart}>
-          Starta valkompass
+          Starta testet
         </button>
 
-        <p className="disclaimer">
-          Dina svar sparas inte och är helt anonyma.
-          Partipositionerna uppdateras inför valet 2026.
+        <p className="start-subtext">
+          Politik är allvar. Men politiska reflexer kan ibland behöva synas i
+          ett lite skarpare ljus.
+        </p>
+
+        <p className="about-test">
+          Ett politiskt test med glimten i ögat, framtaget av Moderaterna i
+          Stenungsund.
         </p>
       </div>
     </div>

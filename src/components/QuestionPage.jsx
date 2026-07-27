@@ -1,41 +1,6 @@
 import { useState, useEffect } from 'react'
 import komunLogo from '../assets/steungundsundskommun.png'
 
-const AgreeStrongIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <circle cx="12" cy="12" r="9.5" fill="currentColor" opacity="0.15"/>
-    <path d="M7.5 12l3 3 6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-)
-
-const AgreePartialIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <circle cx="12" cy="12" r="9.5" stroke="currentColor" strokeWidth="1.5" opacity="0.4"/>
-    <path d="M7.5 12l3 3 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-)
-
-const DisagreePartialIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <circle cx="12" cy="12" r="9.5" stroke="currentColor" strokeWidth="1.5" opacity="0.4"/>
-    <path d="M8 12h8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
-  </svg>
-)
-
-const DisagreeStrongIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <circle cx="12" cy="12" r="9.5" fill="currentColor" opacity="0.15"/>
-    <path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
-  </svg>
-)
-
-const OPTIONS = [
-  { value: 2,  Icon: AgreeStrongIcon,    top: 'Instämmer', bot: 'helt'   },
-  { value: 1,  Icon: AgreePartialIcon,   top: 'Instämmer', bot: 'delvis'  },
-  { value: -1, Icon: DisagreePartialIcon,top: 'Delvis',    bot: 'emot'    },
-  { value: -2, Icon: DisagreeStrongIcon, top: 'Helt',      bot: 'emot'    },
-]
-
 export default function QuestionPage({ question, total, current, answer, onAnswer, onBack }) {
   const [pending, setPending] = useState(null)
 
@@ -44,10 +9,10 @@ export default function QuestionPage({ question, total, current, answer, onAnswe
     setPending(null)
   }, [question.id])
 
-  function handleSelect(value) {
+  function handleSelect(letter) {
     if (pending !== null) return
-    setPending(value)
-    setTimeout(() => onAnswer(value), 220)
+    setPending(letter)
+    setTimeout(() => onAnswer(letter), 220)
   }
 
   return (
@@ -65,48 +30,26 @@ export default function QuestionPage({ question, total, current, answer, onAnswe
 
       <div className="question-card">
         <span className="category-tag">{question.category}</span>
-        <h2 className="question-text">{question.text}</h2>
+        <h2 className="question-title">{question.title}</h2>
+        <p className="question-text">{question.text}</p>
 
-        <div className="answer-grid" role="radiogroup" aria-label="Ditt svar">
-          {OPTIONS.map((opt) => {
-            const isSelected = pending === opt.value || (pending === null && answer === opt.value)
+        <div className="answer-list" role="radiogroup" aria-label="Ditt svar">
+          {question.options.map((opt) => {
+            const isSelected = pending === opt.letter || (pending === null && answer === opt.letter)
             return (
               <button
-                key={opt.value}
+                key={opt.letter}
                 role="radio"
                 aria-checked={isSelected}
-                className={`answer-btn${isSelected ? ' selected' : ''}`}
-                onClick={() => handleSelect(opt.value)}
+                className={`answer-option${isSelected ? ' selected' : ''}`}
+                onClick={() => handleSelect(opt.letter)}
                 disabled={pending !== null}
               >
-                <span className="answer-icon"><opt.Icon /></span>
-                <span className="answer-label">{opt.top}<br />{opt.bot}</span>
+                <span className="option-letter">{opt.letter}</span>
+                <span className="option-text">{opt.text}</span>
               </button>
             )
           })}
-        </div>
-
-        {(question.proArg || question.conArg) && (
-          <div className="arguments">
-            {question.proArg && (
-              <div className="arg arg-pro">
-                <span className="arg-marker" aria-hidden="true">+</span>
-                <span>{question.proArg}</span>
-              </div>
-            )}
-            {question.conArg && (
-              <div className="arg arg-con">
-                <span className="arg-marker" aria-hidden="true">−</span>
-                <span>{question.conArg}</span>
-              </div>
-            )}
-          </div>
-        )}
-
-        <div className="action-row">
-          <button className="skip-btn" onClick={() => onAnswer(null)}>
-            Hoppa över denna fråga
-          </button>
         </div>
       </div>
 

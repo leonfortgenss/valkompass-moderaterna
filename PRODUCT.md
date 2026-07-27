@@ -10,7 +10,7 @@ Voters in Stenungsunds kommun of all ages and political backgrounds. They are de
 
 ## Product Purpose
 
-A valkompass (election compass) that lets voters answer 15 questions on local Stenungsund policy issues, then shows a match percentage against all parties in kommunfullmäktige. Built and branded by Moderaterna Stenungsund, but designed to feel trustworthy and neutral in how it presents results. Success means a voter finishes all 15 questions and feels the result was fair and informative.
+"Vilket Stenungsund vill du ha?" — a satirical political test built and branded by Moderaterna i Stenungsund. Voters answer 25 local questions (skola, ekonomi, Campus Nösnäs, trygghet, äldreomsorg, samhällsplanering, klimat/industri/beredskap, politiskt ledarskap), picking from four options per question: one reflects Moderaterna's actual position, the other three are satirical exaggerations of other political reflexes (never naming other parties). The result shows a match percentage with Moderaterna's politics, a satirical "profile" (e.g. "Den handlingskraftiga framtidsbyggaren"), three sub-scores (Handlingskraft, Ekonomiskt ansvar, Framtidstro), and a handful of questions where the user agreed/disagreed with Moderaterna — ending with a clear, respectful reveal of the sender. Success means the test is shared widely, feels funny and fair rather than mean-spirited, and is something a Moderaterna representative could stand behind publicly.
 
 ## Brand Personality
 
