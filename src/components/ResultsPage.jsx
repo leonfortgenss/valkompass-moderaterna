@@ -44,7 +44,6 @@ export default function ResultsPage({ results, onRestart }) {
       </header>
 
       <div className="results-card">
-        {/* 1–2. Profilnamn och kort profiltext */}
         <p className="results-label">Din profil</p>
         <h1 className="profile-name">{profile.name}</h1>
         <p className="profile-text">{profile.text}</p>
@@ -114,31 +113,18 @@ export default function ResultsPage({ results, onRestart }) {
             </ul>
           </>
         )}
-
-        {/* 7. Avslöjandet av avsändaren */}
+         {matchPercent > 70 && (
         <div className="reveal-block">
-          <p>
-            Det visar sig att dina svar ligger nära en politik som prioriterar
-            kunskap, trygghet, företagsamhet, valfrihet och ordning i ekonomin.
-          </p>
-          <p className="reveal-strong">
-            Det är också Moderaterna i Stenungsunds politik inför valet 2026.
-          </p>
-          <p className="reveal-tagline">
-            Politiken i testet är spetsad med humor. Vår ambition för
-            Stenungsund är helt seriös.
-          </p>
-        </div>
+              <p>
+                Det visar sig att dina svar ligger nära en politik som prioriterar
+                kunskap, trygghet, företagsamhet, valfrihet och ordning i ekonomin.
+              </p>
+              <p className="reveal-strong">
+                Det är också Moderaterna i Stenungsunds politik inför valet 2026.
+              </p>
 
-        <div className="results-attribution">
-          <div className="m-badge small">M</div>
-          <div className="org-name">
-            <span className="org-main">Moderaterna</span>
-            <span className="org-sub">Stenungsunds kommun</span>
-          </div>
         </div>
-
-        {/* 8–10. Länkar, delning och att göra om testet */}
+      )}
         <div className="results-actions">
           <a className="btn-secondary" href={VALMANIFEST_URL} target="_blank" rel="noreferrer">
             Läs Moderaternas valmanifest
@@ -146,13 +132,28 @@ export default function ResultsPage({ results, onRestart }) {
           <a className="btn-secondary" href={CAMPUS_NOSNAS_URL} target="_blank" rel="noreferrer">
             Läs mer om Campus Nösnäs
           </a>
-          <button className="btn-secondary" onClick={handleShare}>
-            {shareState === 'copied' ? 'Länk kopierad!' : 'Dela mitt resultat'}
-          </button>
           <button className="btn-primary" onClick={onRestart}>
             Gör om testet
           </button>
         </div>
+        <div className="results-attribution">
+          <div className="org-info">
+            <div className="m-badge small">M</div>
+            <div className="org-name">
+              <span className="org-main">Moderaterna</span>
+              <span className="org-sub">Stenungsunds kommun</span>
+            </div>
+          </div>
+          <div className="reveal-tagline-group">
+            <p className="reveal-tagline">
+              Politiken i testet är spetsad med humor.
+            </p>
+            <p className="reveal-tagline">
+              Vår ambition för Stenungsund är helt seriös.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   )
