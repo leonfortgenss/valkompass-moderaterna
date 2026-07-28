@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import komunLogo from '../assets/steungundsundskommun.png'
 
-const VALMANIFEST_URL = 'https://moderaterna.se/stenungsund/'
+const VALMANIFEST_URL = 'https://www.stenungsundsmoderaterna.se/valmanifest2026'
 const CAMPUS_NOSNAS_URL = 'https://moderaterna.se/stenungsund/'
 
 export default function ResultsPage({ results, onRestart }) {
