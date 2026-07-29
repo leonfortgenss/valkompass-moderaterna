@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import komunLogo from '../assets/steungundsundskommun.png'
-
+import moderaternaLogo from '../assets/Moderaterna Logo.svg'
 const VALMANIFEST_URL = 'https://www.stenungsundsmoderaterna.se/valmanifest2026'
-const CAMPUS_NOSNAS_URL = 'https://moderaterna.se/stenungsund/'
+const MEDLEM_URL = 'https://moderaterna.membersite.se/Membership/BuyMembershipGetSparData'
 
 export default function ResultsPage({ results, onRestart }) {
   const [visible, setVisible] = useState(false)
@@ -129,8 +129,8 @@ export default function ResultsPage({ results, onRestart }) {
           <a className="btn-secondary" href={VALMANIFEST_URL} target="_blank" rel="noreferrer">
             Läs Moderaternas valmanifest
           </a>
-          <a className="btn-secondary" href={CAMPUS_NOSNAS_URL} target="_blank" rel="noreferrer">
-            Läs mer om Campus Nösnäs
+          <a className="btn-secondary" href={MEDLEM_URL} target="_blank" rel="noreferrer">
+            Bli medlem i Moderaterna
           </a>
           <button className="btn-primary" onClick={onRestart}>
             Gör om testet
@@ -138,7 +138,9 @@ export default function ResultsPage({ results, onRestart }) {
         </div>
         <div className="results-attribution">
           <div className="org-info">
-            <div className="m-badge small">M</div>
+            <div className="small">
+              <img src={moderaternaLogo} alt="Moderaterna" className="m-logo" />
+            </div>
             <div className="org-name">
               <span className="org-main">Moderaterna</span>
               <span className="org-sub">Stenungsunds kommun</span>

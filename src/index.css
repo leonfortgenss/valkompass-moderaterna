@@ -680,3 +680,11 @@ body {
   .profile-name { font-size: 1.0625rem; }
   .match-pct { font-size: 1.5rem; }
 }
+
+.m-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
