@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { questions } from './data/questions.js'
 import { calculateResults } from './utils/scoring.js'
 import StartPage from './components/StartPage.jsx'
 import QuestionPage from './components/QuestionPage.jsx'
 import ResultsPage from './components/ResultsPage.jsx'
+import { trackEvent } from './lib/analytics.js'
 
 const SCREEN = { START: 'start', QUESTION: 'question', RESULTS: 'results' }
 const STORAGE_KEY = 'vilket-stenungsund-vill-du-ha:svar'
@@ -51,7 +52,24 @@ export default function App() {
   const [currentIndex, setCurrentIndex] = useState(Math.min(initialUnanswered, questions.length - 1))
   const [answers, setAnswers] = useState(initialAnswers)
 
+  const results = useMemo(
+    () => (screen === SCREEN.RESULTS ? calculateResults(answers, questions) : null),
+    [screen, answers],
+  )
+
+  useEffect(() => {
+    if (screen === SCREEN.RESULTS && results) {
+      trackEvent('test-completed', {
+        profile: results.profile.name,
+        match: results.matchPercent,
+      })
+    }
+    // Ska bara skickas när man landar på resultatsidan, inte vid varje omritning.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [screen])
+
   function handleStart() {
+    trackEvent('test-started')
     setCurrentIndex(0)
     setScreen(SCREEN.QUESTION)
   }
@@ -97,6 +115,5 @@ export default function App() {
     )
   }
 
-  const results = calculateResults(answers, questions)
   return <ResultsPage results={results} onRestart={handleRestart} />
 }

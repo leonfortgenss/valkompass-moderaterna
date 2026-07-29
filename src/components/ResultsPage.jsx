@@ -6,35 +6,12 @@ const MEDLEM_URL = 'https://moderaterna.membersite.se/Membership/BuyMembershipGe
 
 export default function ResultsPage({ results, onRestart }) {
   const [visible, setVisible] = useState(false)
-  const [shareState, setShareState] = useState('idle')
   const { matchPercent, profile, subScores, agreements, disagreements } = results
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 80)
     return () => clearTimeout(t)
   }, [])
-
-  async function handleShare() {
-    const shareText = `Jag blev "${profile.name}" i testet Vilket Stenungsund vill du ha?`
-    const shareUrl = window.location.href
-
-    if (navigator.share) {
-      try {
-        await navigator.share({ text: shareText, url: shareUrl })
-      } catch {
-        // Avbrutet av användaren — ignorera.
-      }
-      return
-    }
-
-    try {
-      await navigator.clipboard.writeText(`${shareText} ${shareUrl}`)
-      setShareState('copied')
-      setTimeout(() => setShareState('idle'), 2500)
-    } catch {
-      setShareState('idle')
-    }
-  }
 
   return (
     <div className="results-page">
