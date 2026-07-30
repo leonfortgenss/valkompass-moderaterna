@@ -3,7 +3,7 @@
 // Byt ut UMAMI_WEBSITE_ID (och UMAMI_SCRIPT_URL om ni självhostar) mot
 // värdena från Umami → Settings → Websites → er sajt → Tracking code.
 const UMAMI_SCRIPT_URL = 'https://cloud.umami.is/script.js'
-const UMAMI_WEBSITE_ID = 'c9c4ddae-6c2d-4d42-9dad-47113e28e02a'
+const UMAMI_WEBSITE_ID = 'c6c0cdb3-96e8-4960-b218-f8bcf8e1db9a'
 
 let initialized = false
 
