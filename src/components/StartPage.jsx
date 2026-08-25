@@ -5,7 +5,7 @@ export default function StartPage({ onStart }) {
         <h1 className="start-title">Vilket Stenungsund vill du ha?</h1>
 
         <p className="intro-text">
-          Gör 25 lokala vägval om skola, ekonomi, trygghet, omsorg och framtid.
+          Gör 19 lokala vägval om skola, ekonomi, trygghet, omsorg och framtid.
           Välj det alternativ som ligger närmast hur du själv tänker.
         </p>
 
