@@ -9,6 +9,7 @@ import { trackEvent } from './lib/analytics.js'
 const SCREEN = { START: 'start', QUESTION: 'question', RESULTS: 'results' }
 const STORAGE_KEY = 'vilket-stenungsund-vill-du-ha:svar'
 
+
 function loadStoredAnswers() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
